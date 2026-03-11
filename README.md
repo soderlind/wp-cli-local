@@ -40,16 +40,33 @@ The wrapper script at `scripts/wp`:
 
 ## Usage
 
-When an AI agent uses this skill, it calls the wrapper script automatically. For manual testing:
+Once installed, just ask your AI agent to run WP-CLI commands in natural language. The skill is triggered automatically.
+
+### Example prompts
+
+- "List all plugins on my Local site"
+- "Activate the woocommerce plugin"
+- "What version of WordPress is running?"
+- "Flush the cache"
+- "Export the database"
+- "Show all options matching `siteurl`"
+- "List scheduled cron events"
+- "Run `wp db query \"SELECT * FROM wp_options LIMIT 5;\"`"
+
+If your working directory is inside a Local site folder, the site is detected automatically. Otherwise the agent will ask which site to target, or you can specify it: "List plugins on the **my-site** site".
+
+### Manual / testing
+
+You can also call the wrapper script directly in a terminal:
 
 ```bash
-# From inside a Local site directory — auto-detects the site
+# Auto-detect site from CWD
 bash scripts/wp plugin list
 
 # Explicit site name
 bash scripts/wp --site=my-site core version
 
-# List all sites with running/halted status
+# List all Local sites with running/halted status
 bash scripts/wp --list
 ```
 
