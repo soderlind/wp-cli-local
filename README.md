@@ -5,7 +5,6 @@ An AI agent skill that runs [WP-CLI](https://wp-cli.org/) commands against [Loca
 - **Auto-detects** the Local site from your current directory
 - Falls back to `--site=<name>` when outside a site folder
 - Uses Local's own PHP and MySQL binaries with the correct `php.ini`
-- Includes a **direnv** setup script for interactive terminal use
 
 ## Installation
 
@@ -63,30 +62,9 @@ Local by Flywheel sites:
   ○ my-site              halted     /Users/you/Sites/my-site
 ```
 
-## direnv Integration
-
-For interactive terminal use, generate `.envrc` files so bare `wp` commands work when you `cd` into a site directory:
-
-```bash
-# Generate .envrc for all sites
-bash scripts/setup-direnv
-
-# Generate for a specific site
-bash scripts/setup-direnv my-site
-
-# Then in the site directory
-cd ~/Sites/my-site
-direnv allow
-wp --path=./app/public plugin list
-```
-
-The generated `.envrc` exports `WP_CLI_PHP`, `WP_CLI_PHP_ARGS` (pointing to the site's `php.ini`), `MYSQL_UNIX_PORT` (MySQL socket for `wp db` commands), and adds the MySQL binary directory to `PATH`. Requires [direnv](https://direnv.net/) (`brew install direnv`).
-
-> **Note:** The site must be running in Local for the `php.ini` to exist. The `.envrc` will print a warning if it's missing.
-
 ## Credit
 
-Inspiered by [local-wp-cli](https://github.com/aslamdoctor/local-wp-cli) skill, but rewritten from scratch with better site detection, MySQL socket support, and direnv integration.
+Inspired by [local-wp-cli](https://github.com/aslamdoctor/local-wp-cli) skill, but rewritten from scratch with better site detection and MySQL socket support.
 
 ## License
 

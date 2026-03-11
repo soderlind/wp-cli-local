@@ -80,23 +80,4 @@ $WP option get siteurl
 $WP core version
 ```
 
-## direnv Integration
-
-For interactive terminal use, the skill includes a setup script that generates `.envrc` files for each Local site. This lets you run bare `wp` commands when inside a site directory.
-
-```bash
-# Generate .envrc for all sites
-bash {{SKILL_DIR}}/scripts/setup-direnv
-
-# Generate .envrc for one site
-bash {{SKILL_DIR}}/scripts/setup-direnv my-site
-
-# Then in the site directory
-cd ~/Sites/my-site
-direnv allow
-wp --path=./app/public plugin list
-```
-
-The generated `.envrc` exports `WP_CLI_PHP`, `WP_CLI_PHP_ARGS`, and adds MySQL to `PATH`. Requires [direnv](https://direnv.net/) (`brew install direnv`).
-
 **Note:** The AI agent should always use the wrapper script, not direnv. The direnv setup is a convenience for the user's own interactive terminal sessions.
