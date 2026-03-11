@@ -13,6 +13,14 @@ An AI agent skill that runs [WP-CLI](https://wp-cli.org/) commands against [Loca
 npx skills add https://github.com/soderlind/wp-cli-local --skill wp-cli-local -g
 ```
 
+The `--all` flag installs the skill for all detected AI agents (GitHub Copilot, Claude Code, Cursor, Cline, etc.) without prompting:
+
+```bash
+npx skills add https://github.com/soderlind/wp-cli-local --skill wp-cli-local -g --all
+```
+
+Without `--all`, you'll be prompted to select which agents to install for.
+
 ## Prerequisites
 
 - **macOS** (Apple Silicon or Intel)
