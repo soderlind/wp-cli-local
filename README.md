@@ -6,6 +6,9 @@ An AI agent skill that runs [WP-CLI](https://wp-cli.org/) commands against [Loca
 - Falls back to `--site=<name>` when outside a site folder
 - Uses Local's own PHP and MySQL binaries with the correct `php.ini`
 
+<img width="590" height="469" alt="Screenshot 2026-03-12 at 15 33 34" src="https://github.com/user-attachments/assets/6a1241ef-f15f-4915-a229-1548256cd74b" />
+
+
 ## Installation
 
 ```bash
